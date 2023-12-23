@@ -19,32 +19,32 @@
 						<div class="form-group">
 							<label for="kode_type">Type Mobil</label>
 							<select name="kode_type" class="form-control">
-							<option value="">--Pilih Type Mobil--</option>
-								<?php foreach($type as $tp) : ?>
-								<option value="<?php echo $tp->kode_type ?>"><?php echo $tp->nama_type?>
-								</option>
+								<option value="">--Pilih Type Mobil--</option>
+								<?php foreach ($type as $tp) : ?>
+									<option value="<?php echo $tp->kode_type ?>"><?php echo $tp->nama_type ?>
+									</option>
 								<?php endforeach; ?>
 							</select>
-							<?php echo form_error('kode_type','<div class="text-small text-danger">','</div>')?>
+							<?php echo form_error('kode_type', '<div class="text-small text-danger">', '</div>') ?>
 						</div>
 
 						<div class="form-group">
 							<label for="merk">Merk</label>
 							<input type="text" name="merk" placeholder="ketik" autocomplete="off" class="form-control">
-							<?php echo form_error('merk','<div class="text-small text-danger">','</div>') ?>
+							<?php echo form_error('merk', '<div class="text-small text-danger">', '</div>') ?>
 						</div>
 
 						<div class="row">
 							<div class="form-group col-6">
 								<label for="no_plat">No. Plat</label>
 								<input type="text" name="no_plat" id="no_plat" placeholder="ketik" autocomplete="off" class="form-control">
-								<?php echo form_error('no_plat','<div class="text-small text-danger">','</div>') ?>
+								<?php echo form_error('no_plat', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 
 							<div class="form-group col-6">
 								<label for="warna">Warna</label>
 								<input type="text" name="warna" id="warna" placeholder="ketik" autocomplete="off" class="form-control">
-								<?php echo form_error('warna','<div class="text-small text-danger">','</div>') ?>
+								<?php echo form_error('warna', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 						</div>
 
@@ -52,7 +52,7 @@
 							<div class="form-group col-6">
 								<label for="tahun">Tahun</label>
 								<input type="text" name="tahun" id="tahun" placeholder="ketik" autocomplete="off" class="form-control">
-								<?php echo form_error('tahun','<div class="text-small text-danger">','</div>') ?>
+								<?php echo form_error('tahun', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 
 							<div class="form-group col-6">
@@ -62,8 +62,64 @@
 									<option value="1">Tersedia</option>
 									<option value="0">Tidak Tersedia</option>
 								</select>
+								<?php echo form_error('status', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 						</div>
+
+
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="harga">Harga Sewa</label>
+								<input type="text" name="harga" id="harga" placeholder="ketik" autocomplete="off" class="form-control">
+								<?php echo form_error('harga', '<div class="text-small text-danger">', '</div>') ?>
+							</div>
+
+							<div class="form-group col-6">
+								<label for="denda">Denda</label>
+								<input type="text" name="denda" id="denda" placeholder="ketik" autocomplete="off" class="form-control">
+								<?php echo form_error('denda', '<div class="text-small text-danger">', '</div>') ?>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="ac">Ac</label>
+								<select name="ac" class="form-control">
+									<option value="1">Tersedia</option>
+									<option value="0">Tidak Tersedia</option>
+								</select>
+								<?php echo form_error('ac', '<div class="text-small text-danger">', '</div>') ?>
+							</div>
+							<div class="form-group col-6">
+								<label for="supir">Supir</label>
+								<select name="supir" class="form-control">
+									<option value="1">Tersedia</option>
+									<option value="0">Tidak Tersedia</option>
+								</select>
+								<?php echo form_error('supir', '<div class="text-small text-danger">', '</div>') ?>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="mp3_player">Mp3 Player</label>
+								<select name="mp3_player" class="form-control">
+									<option value="1">Tersedia</option>
+									<option value="0">Tidak Tersedia</option>
+								</select>
+								<?php echo form_error('mp3_player', '<div class="text-small text-danger">', '</div>') ?>
+							</div>
+							<div class="form-group col-6">
+								<label for="central_lock">Central Lock</label>
+								<select name="central_lock" class="form-control">
+									<option value="1">Tersedia</option>
+									<option value="0">Tidak Tersedia</option>
+								</select>
+								<?php echo form_error('central_lock', '<div class="text-small text-danger">', '</div>') ?>
+							</div>
+						</div>
+
+
 
 						<div class="form-group">
 							<label for="gambar">Gambar Mobil</label>
@@ -100,27 +156,27 @@
 						</thead>
 
 						<tbody>
-							<?php 
-								$no=1;
-								foreach($mobil as $mb) : ?>
-									<tr>
-										<td><?php echo $no++ ?></td>
-										<td><?php echo $mb->kode_type ?></td>
-										<td><?php echo $mb->merk ?></td>
-										<td><?php echo $mb->no_plat ?></td>
-										<td><?php 
+							<?php
+							$no = 1;
+							foreach ($mobil as $mb) : ?>
+								<tr>
+									<td><?php echo $no++ ?></td>
+									<td><?php echo $mb->kode_type ?></td>
+									<td><?php echo $mb->merk ?></td>
+									<td><?php echo $mb->no_plat ?></td>
+									<td><?php
 										if ($mb->status == "0") {
 											echo "<span class='badge badge-danger'>Tidak Tersedia</span>";
-										}else {
+										} else {
 											echo "<span class='badge badge-primary'>Tersedia</span>";
 										}
 										?></td>
-										<td>
-											<a href="<?php echo base_url('admin/Data_mobil/update_mobil/').$mb->id_mobil ?>" class="btn btn-sm btn-info"><i class="fa fa-pen"></i> Ubah</a>
-											<a href="<?php echo base_url('admin/Data_mobil/detail_mobil/').$mb->id_mobil ?>" class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> Detail</a>
-											<a href="<?php echo base_url('admin/Data_mobil/delete_mobil/').$mb->id_mobil ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
-										</td>
-									</tr>
+									<td>
+										<a href="<?php echo base_url('admin/Data_mobil/update_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-info"><i class="fa fa-pen"></i> Ubah</a>
+										<a href="<?php echo base_url('admin/Data_mobil/detail_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> Detail</a>
+										<a href="<?php echo base_url('admin/Data_mobil/delete_mobil/') . $mb->id_mobil ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+									</td>
+								</tr>
 							<?php endforeach; ?>
 						</tbody>
 					</table>
@@ -130,9 +186,8 @@
 	</div>
 	<!-- Content Row -->
 
-	</div>
-	<!-- /.container-fluid -->
+</div>
+<!-- /.container-fluid -->
 
-	</div>
-	<!-- End of Main Content -->
-	
+</div>
+<!-- End of Main Content -->

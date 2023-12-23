@@ -15,18 +15,18 @@
 				</div>
 
 				<div class="card-body">
-					<form  method="POST" action="<?php echo base_url('admin/Data_type/tambah_type') ?>">
+					<form method="POST" action="<?php echo base_url('admin/Data_type/tambah_type') ?>">
 						<div class="row">
 							<div class="form-group col-4">
 								<label for="kode_type">Kode Type</label>
 								<input type="text" name="kode_type" id="kode_type" placeholder="ketik" autocomplete="off" class="form-control">
-								<?php echo form_error('kode_type','<div class="text-small text-danger">','</div>') ?>
+								<?php echo form_error('kode_type', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 
 							<div class="form-group col-8">
 								<label for="nama_type">Nama Type</label>
 								<input type="text" name="nama_type" id="nama_type" placeholder="ketik" autocomplete="off" class="form-control">
-								<?php echo form_error('nama_type','<div class="text-small text-danger">','</div>') ?>
+								<?php echo form_error('nama_type', '<div class="text-small text-danger">', '</div>') ?>
 							</div>
 						</div>
 
@@ -58,18 +58,18 @@
 						</thead>
 
 						<tbody>
-							<?php 
-								$no=1;
-								foreach($type as $tp) : ?>
-									<tr>
-                                        <td><?php echo $no++ ?></td>
-                                        <td><?php echo $tp->kode_type ?></td>
-                                        <td><?php echo $tp->nama_type ?></td>
-										<td>
-											<a href="<?php echo base_url('admin/Data_type/update_type/').$tp->id_type ?>" class="btn btn-sm btn-info"><i class="fa fa-pen"></i> Ubah</a>
-											<a href="<?php echo base_url('admin/Data_type/delete_type/').$tp->id_type ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
-										</td>
-									</tr>
+							<?php
+							$no = 1;
+							foreach ($type as $tp) : ?>
+								<tr>
+									<td><?php echo $no++ ?></td>
+									<td><?php echo $tp->kode_type ?></td>
+									<td><?php echo $tp->nama_type ?></td>
+									<td>
+										<a href="<?php echo base_url('admin/Data_type/update_type/') . $tp->id_type ?>" class="btn btn-sm btn-info"><i class="fa fa-pen"></i> Ubah</a>
+										<a href="<?php echo base_url('admin/Data_type/delete_type/') . $tp->id_type ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+									</td>
+								</tr>
 							<?php endforeach; ?>
 						</tbody>
 					</table>
@@ -79,9 +79,8 @@
 	</div>
 	<!-- Content Row -->
 
-	</div>
-	<!-- /.container-fluid -->
+</div>
+<!-- /.container-fluid -->
 
-	</div>
-	<!-- End of Main Content -->
-	
+</div>
+<!-- End of Main Content -->

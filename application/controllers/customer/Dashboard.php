@@ -1,6 +1,7 @@
 <?php
 
-class Dashboard extends CI_Controller{
+class Dashboard extends CI_Controller
+{
 
     public function index()
     {
@@ -8,7 +9,7 @@ class Dashboard extends CI_Controller{
 
         $this->load->view('template_customer/header');
         $this->load->view('template_customer/topbar');
-        $this->load->view('customer/dashboard',$data);
+        $this->load->view('customer/dashboard', $data);
         $this->load->view('template_customer/footer');
     }
 
@@ -16,12 +17,10 @@ class Dashboard extends CI_Controller{
     {
         $data['detail'] = $this->R_model->ambil_id_mobil($id);
 
+
         $this->load->view('template_customer/header');
-        $this->load->view('template_customer/topbar');
-        $this->load->view('customer/dashboard',$data);
+        // $this->load->view('template_customer/topbar');
+        $this->load->view('customer/detail_mobil', $data);
         $this->load->view('template_customer/footer');
     }
-
 }
-
-?>
